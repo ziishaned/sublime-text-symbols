@@ -8,6 +8,7 @@
 /build/                export-ignore
 /icons/svg/            export-ignore
 /icons/folders/svg/    export-ignore
+/media/                export-ignore
 /tests/                export-ignore
 /.editorconfig         export-ignore
 /.flake8               export-ignore

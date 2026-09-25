@@ -61,7 +61,7 @@ def create_icons(icons):
     # recreate icons overlay
     # note: requires `subl` to be registered on $PATH
     try:
-        subprocess.call(["subl", "--command", "sts_revert"])
+        subprocess.call(["subl", "--command", "symbols_revert"])
     except:
         pass
 

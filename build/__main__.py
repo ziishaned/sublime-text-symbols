@@ -7,7 +7,7 @@ from preferences import create_preferences
 
 def main(argv=None):
     parser = argparse.ArgumentParser(
-        description="Create icons and preferences for Sublime Text Symbols."
+        description="Create icons and preferences for Symbols."
     )
     parser.add_argument(
         "-i", "--icons", action="store_true", help="convert svg icons to png"

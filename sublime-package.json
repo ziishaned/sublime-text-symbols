@@ -3,7 +3,7 @@
 		"settings": [
 			{
 				"file_patterns": [
-					"Sublime Text Symbols.sublime-settings"
+					"Symbols.sublime-settings"
 				],
 				"schema": {
 					"properties": {

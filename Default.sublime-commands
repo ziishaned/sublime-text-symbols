@@ -1,10 +1,14 @@
 [
 	{
-		"caption": "Preferences: Sublime Text Symbols Settings",
+		"caption": "Preferences: Symbols Settings",
 		"command": "edit_settings", "args":
 		{
-			"base_file": "${packages}/Sublime Text Symbols/Sublime Text Symbols.sublime-settings",
-			"default": "// Sublime Text Symbols Preferences – User\n// ================================================================\n{\n\t$0\n}\n"
+			"base_file": "${packages}/Symbols/Symbols.sublime-settings",
+			"default": "// Symbols Preferences – User\n// ================================================================\n{\n\t$0\n}\n"
 		}
+	},
+	{
+		"caption": "Symbols: Revert to a Freshly Installed State",
+		"command": "symbols_revert"
 	}
 ]

@@ -4,11 +4,11 @@ If you have any problems, please search for [a similar issue] first, before crea
 
 > Also, check the list of [known issues](https://github.com/SublimeText/AFileIcon/labels/known%20issue) before doing so.
 
-Don't forget to provide your environment details: just choose `Sublime Text Symbols: Environment` in `Command Palette` and copy them.
+Don't forget to provide your environment details: just choose `Symbols: Environment` in `Command Palette` and copy them.
 
 ## Git Commit Guidelines
 
-We have very precise rules over how our git commit messages can be formatted. This leads to more readable messages that are easy to follow when looking through the project history. But also, we use git commit messages to generate **Sublime Text Symbols** change log. 
+We have very precise rules over how our git commit messages can be formatted. This leads to more readable messages that are easy to follow when looking through the project history. But also, we use git commit messages to generate **Symbols** change log. 
 
 We use [**Angular JS commit guidelines**](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines) (except scope notes: we don't need them).
 
@@ -32,7 +32,7 @@ As a last resort, [Graphviz](https://graphviz.org/) includes `cairo.dll` in its 
 
 ### Installation
 
-Navigate to _Sublime Text Symbols_ root directory and call...
+Navigate to _Symbols_ root directory and call...
 
 **Linux/MacOS**
 
@@ -52,7 +52,7 @@ py -m pip install -U -r requirements-dev.txt
 
 ### Building
 
-Navigate to _Sublime Text Symbols_ root directory, activate python virtual environment and call...
+Navigate to _Symbols_ root directory, activate python virtual environment and call...
 
 **Linux/MacOS**
 
@@ -88,7 +88,7 @@ If you want to add a new icon, please follow these steps:
 2. Add an example file that shows this icon to the `tests` folder.
 3. Provide the icon in SVG format and put it in the `icons/svg` directory.
 4. Add icon settings to the [icons/icons.json](https://github.com/SublimeText/AFileIcon/blob/develop/icons/icons.json) file.
-5. Build and check if the icon looks good (Run _Sublime Text Symbols: Revert to a Freshly Installed State_ after build to apply your icon).
+5. Build and check if the icon looks good (Run _Symbols: Revert to a Freshly Installed State_ after build to apply your icon).
 6. It's recommended to add a link to the package which provides the syntax (see [PACKAGES.md](https://github.com/SublimeText/AFileIcon/blob/develop/PACKAGES.md))
 
 > All that you need to add are the SVG icon, its settings and the example file(s).
@@ -159,4 +159,4 @@ These settings will create three files after running the build:
 * `aliases\Shell Script (Git).sublime-syntax`
 * `preferences\file_type_git.tmPreferences`
 
-Git icons will be applied to files such as `.gitconfig`, `.gitmodules`, etc. when you install `GitSyntaxes` package. However this package doesn't provide syntaxes for `.gitignore` and `.gitkeep`. That's why `Sublime Text Symbols` creates syntax alias to `Shell Script` to use its highlighting and git icon on these files.
+Git icons will be applied to files such as `.gitconfig`, `.gitmodules`, etc. when you install `GitSyntaxes` package. However this package doesn't provide syntaxes for `.gitignore` and `.gitkeep`. That's why `Symbols` creates syntax alias to `Shell Script` to use its highlighting and git icon on these files.

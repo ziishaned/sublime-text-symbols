@@ -1,4 +1,4 @@
-# Sublime Text Symbols
+# Symbols
 
 ![Icons preview][img-preview]
 
@@ -22,26 +22,24 @@ beautiful [Symbols][symbols] icon set by Miguel Solorio. Based on the
 
 ## Installation
 
-The package is not published on Package Control. Install it directly from this
-repository:
+### Package Control
+
+The package is listed as `Symbols`:
+
+1. Open `Command Palette` using menu item `Tools → Command Palette...`
+2. Choose `Package Control: Install Package`
+3. Find `Symbols` and hit `Enter`
 
 ### Git clone
 
 1. Open the `Packages` directory via menu item `Preferences → Browse Packages...`
-2. Clone the repository into it. **The folder must be named `Sublime Text Symbols`**:
+2. Clone the repository into it. **The folder must be named `Symbols`**:
 
    ```bash
-   git clone https://github.com/ziishaned/sublime-text-symbols.git "Sublime Text Symbols"
+   git clone https://github.com/ziishaned/sublime-text-symbols.git "Symbols"
    ```
 
 3. Restart Sublime Text.
-
-### Download
-
-1. [Download the `.zip`][download]
-2. Unzip and rename the folder to `Sublime Text Symbols`
-3. Copy the folder into your `Packages` directory
-4. Restart Sublime Text
 
 > **Note:** If the official `A File Icon` package is installed via Package
 > Control, remove it first to avoid conflicts.
@@ -51,8 +49,8 @@ repository:
 You can change the color, opacity level and size of the icons by modifying your
 user preferences file, which you can find by:
 
-* `Preferences → Package Settings → Sublime Text Symbols → Settings`
-* Choose `Preferences: Sublime Text Symbols Settings` in the `Command Palette`
+* `Preferences → Package Settings → Symbols → Settings`
+* Choose `Preferences: Symbols Settings` in the `Command Palette`
 
 The most important options:
 
@@ -84,7 +82,7 @@ the right icon.
 If something goes wrong try to:
 
 1. Open `Command Palette` using menu item `Tools → Command Palette...`
-2. Choose `Sublime Text Symbols: Revert to a Freshly Installed State`
+2. Choose `Symbols: Revert to a Freshly Installed State`
 3. Restart Sublime Text
 
 ## Icon mapping
@@ -109,7 +107,7 @@ Notable substitutions, following the associations of the Symbols theme:
 In simple terms, the package does the following:
 
 1. Copies all the necessary files right after install or upgrade to a hidden
-   `zzz Sublime Text Symbols` overlay package, which is loaded as late as possible
+   `zzz Symbols` overlay package, which is loaded as late as possible
 2. Searches all installed themes
 3. Patches them by generating `<theme-name>.sublime-theme` files, which
    override the file type and folder icon definitions
@@ -145,7 +143,6 @@ python3 -m venv .venv
 [a-file-icon]: https://github.com/SublimeText/AFileIcon
 [symbols]: https://github.com/miguelsolorio/vscode-symbols
 [packages]: PACKAGES.md
-[download]: https://github.com/ziishaned/sublime-text-symbols/archive/refs/heads/main.zip
 
 <!-- Assets -->
 

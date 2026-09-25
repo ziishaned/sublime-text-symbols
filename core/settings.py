@@ -9,7 +9,7 @@ from .utils.decorators import debounce
 from .utils.logging import log
 from .utils.path import PACKAGE_NAME, OVERLAY_ROOT
 
-PACKAGE_SETTINGS = "A File Icon.sublime-settings"
+PACKAGE_SETTINGS = "Sublime Text Symbols.sublime-settings"
 USER_SETTINGS = "Preferences.sublime-settings"
 
 _cached_packages = []

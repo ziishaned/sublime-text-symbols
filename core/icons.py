@@ -49,7 +49,7 @@ def _init_overlay(dest):
     In order to make sure to override existing icons provided by the themes
     icons need to be copied to a package, which is loaded as late as possible.
 
-    This function therefore creates a package named `zzz A File Icon zzz` and
+    This function therefore creates a package named `zzz Sublime Text Symbols` and
     copies all icons over there.
     """
     # copy icons from the loosen package folder

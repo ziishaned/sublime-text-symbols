@@ -1,10 +1,10 @@
 [
 	{
-		"caption": "Preferences: A File Icon Settings",
+		"caption": "Preferences: Sublime Text Symbols Settings",
 		"command": "edit_settings", "args":
 		{
-			"base_file": "${packages}/A File Icon/A File Icon.sublime-settings",
-			"default": "// A File Icon Preferences – User\n// ================================================================\n{\n\t$0\n}\n"
+			"base_file": "${packages}/Sublime Text Symbols/Sublime Text Symbols.sublime-settings",
+			"default": "// Sublime Text Symbols Preferences – User\n// ================================================================\n{\n\t$0\n}\n"
 		}
 	}
 ]

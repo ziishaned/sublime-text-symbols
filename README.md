@@ -28,11 +28,10 @@ repository:
 ### Git clone
 
 1. Open the `Packages` directory via menu item `Preferences → Browse Packages...`
-2. Clone the repository into it. **The folder must be named `A File Icon`**, as
-   the package still uses its original internal name:
+2. Clone the repository into it. **The folder must be named `Sublime Text Symbols`**:
 
    ```bash
-   git clone https://github.com/ziishaned/sublime-text-symbols.git "A File Icon"
+   git clone https://github.com/ziishaned/sublime-text-symbols.git "Sublime Text Symbols"
    ```
 
 3. Restart Sublime Text.
@@ -40,7 +39,7 @@ repository:
 ### Download
 
 1. [Download the `.zip`][download]
-2. Unzip and rename the folder to `A File Icon`
+2. Unzip and rename the folder to `Sublime Text Symbols`
 3. Copy the folder into your `Packages` directory
 4. Restart Sublime Text
 
@@ -52,8 +51,8 @@ repository:
 You can change the color, opacity level and size of the icons by modifying your
 user preferences file, which you can find by:
 
-* `Preferences → Package Settings → A File Icon → Settings`
-* Choose `Preferences: A File Icon Settings` in the `Command Palette`
+* `Preferences → Package Settings → Sublime Text Symbols → Settings`
+* Choose `Preferences: Sublime Text Symbols Settings` in the `Command Palette`
 
 The most important options:
 
@@ -85,7 +84,7 @@ the right icon.
 If something goes wrong try to:
 
 1. Open `Command Palette` using menu item `Tools → Command Palette...`
-2. Choose `A File Icon: Revert to a Freshly Installed State`
+2. Choose `Sublime Text Symbols: Revert to a Freshly Installed State`
 3. Restart Sublime Text
 
 ## Icon mapping
@@ -110,7 +109,7 @@ Notable substitutions, following the associations of the Symbols theme:
 In simple terms, the package does the following:
 
 1. Copies all the necessary files right after install or upgrade to a hidden
-   `zzz A File Icon` overlay package, which is loaded as late as possible
+   `zzz Sublime Text Symbols` overlay package, which is loaded as late as possible
 2. Searches all installed themes
 3. Patches them by generating `<theme-name>.sublime-theme` files, which
    override the file type and folder icon definitions

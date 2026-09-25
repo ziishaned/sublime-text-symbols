@@ -3,7 +3,7 @@ import sublime
 import sublime_plugin
 
 if int(sublime.version()) >= 3114:
-    __all__ = ["AfiRevertCommand", "plugin_loaded", "plugin_unloaded"]
+    __all__ = ["StsRevertCommand", "plugin_loaded", "plugin_unloaded"]
 
     # Clear module cache to force reloading all modules of this package.
     prefix = __package__ + "."  # don't clear the base package
@@ -19,7 +19,7 @@ if int(sublime.version()) >= 3114:
     from .core import overlay
     from .core import settings
 
-    class AfiRevertCommand(sublime_plugin.ApplicationCommand):
+    class StsRevertCommand(sublime_plugin.ApplicationCommand):
         def run(self):
             def remove_aliases():
                 try:

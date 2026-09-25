@@ -2,12 +2,12 @@ import sublime
 import functools
 
 
-MESSAGE_PREFIX = "A File Icon"
+MESSAGE_PREFIX = "Sublime Text Symbols"
 VALUE_PREFIX = " " * (len(MESSAGE_PREFIX) - 2) + ">>> "
 
 
 def _tags():
-    package_settings = sublime.load_settings("A File Icon.sublime-settings")
+    package_settings = sublime.load_settings("Sublime Text Symbols.sublime-settings")
     if package_settings.get("dev_mode"):
         return package_settings.get("dev_trace", [])
     else:

@@ -9,9 +9,9 @@
   - [Windows] `File → Exit`
   - [Linux]   `File → Exit`
 
-2. Go to `Sublime Text → Preferences → Package Settings → A File Icon → Clean Patches` then repeat step 1.
+2. Go to `Sublime Text → Preferences → Package Settings → Sublime Text Symbols → Revert to a Freshly Installed State` then repeat step 1.
 
-3. Go to `Sublime Text → Preferences → Package Settings → A File Icon → Revert to a Freshly Installed State` then repeat step 1.
+3. Go to `Sublime Text → Preferences → Package Settings → Sublime Text Symbols → Revert to a Freshly Installed State` then repeat step 1.
 
 4. Clear your Sublime Text cache and indexes via removing these folders
 
@@ -52,5 +52,5 @@
 
 #### Your Environment
 <!-- Include as many relevant details about the environment you experienced the bug in -->
-<!-- You can paste here the output of `Package Settings → A File Icon → Environment` command (also available via Command Palette) -->
-<!-- Also don't forget to provide ST Console output (`View → Show Console`) with `"dev_mode": true` option in A File Icon.sublime-settings -->
+<!-- You can paste here the output of `Package Settings → Sublime Text Symbols → Environment` command (also available via Command Palette) -->
+<!-- Also don't forget to provide ST Console output (`View → Show Console`) with `"dev_mode": true` option in Sublime Text Symbols.sublime-settings -->

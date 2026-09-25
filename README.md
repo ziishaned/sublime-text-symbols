@@ -1,133 +1,153 @@
 # Sublime Text Symbols
 
-![preview][img-logo]
+![Icons preview][img-preview]
 
-File and folder icons for Sublime Text, powered by the [Symbols][symbols] icon set. Based on [A File Icon][a-file-icon].
+File and folder icons for [Sublime Text](https://www.sublimetext.com/), powered by the
+beautiful [Symbols][symbols] icon set by Miguel Solorio. Based on the
+[A File Icon][a-file-icon] package.
 
-[![Star on GitHub][img-stars]][stars]
-[![Join the chat at Sublime Forum][img-forum]][forum]
+## Highlights
 
-This package adds file-specific icons to Sublime Text for improved visual grepping. It's heavily inspired by [Atom File Icons](https://github.com/file-icons/atom).
+* **160 file icons** from the Symbols icon set — languages, frameworks, config files and binaries.
 
-Its aims are:
+* **Folder icons** for both the collapsed and expanded state, patched into any theme.
 
-* Provide globally available file type specific icons for each UI themes, whether they provide their own file type specific icons or not.
+* Works with **every theme** — even with those, which don't provide file type icons.
 
-* Workaround a ST core bug, which causes no icons to be displayed for file types an installed but not selected/active theme provides definitions for via `tmPreferences` files.
+* Displays file icons, even if the required syntax definition is not installed
+  (hidden syntax aliases are generated on the fly for config files such as
+  `tsconfig.json`, `.prettierrc` or `Dockerfile`).
 
-* Display file icons, even if required syntax definition is not installed.
+* Optional single-color mode with custom color, opacity and size for all icons.
 
-* Display specific icons for files, no dedicated syntax definition exists for.
+## Installation
 
-If you have any problems, please search for a similar issue first, before creating [a new one][new-issue]. 
+The package is not published on Package Control. Install it directly from this
+repository:
 
-> Also, check the list of [known issues][known-issues] before doing so.
+### Git clone
 
-## Users
+1. Open the `Packages` directory via menu item `Preferences → Browse Packages...`
+2. Clone the repository into it. **The folder must be named `A File Icon`**, as
+   the package still uses its original internal name:
 
-### Installation
+   ```bash
+   git clone https://github.com/ziishaned/sublime-text-symbols.git "A File Icon"
+   ```
 
-#### Package Control
+3. Restart Sublime Text.
 
-The easiest way to install is using Sublime's [Package Control][downloads]. It's listed as `A File Icon`.
+### Download
 
-1. Open `Command Palette` using menu item `Tools → Command Palette...`
-2. Choose `Package Control: Install Package`
-3. Find `A File Icon` and hit `Enter`
+1. [Download the `.zip`][download]
+2. Unzip and rename the folder to `A File Icon`
+3. Copy the folder into your `Packages` directory
+4. Restart Sublime Text
 
-#### Download
+> **Note:** If the official `A File Icon` package is installed via Package
+> Control, remove it first to avoid conflicts.
 
-1. [Download the `.zip`][release]
-2. Unzip and rename folder to `A File Icon`
-3. Copy folder into `Packages` directory, which you can find using the menu item `Preferences → Browse Packages...`
+## Customization
 
-> **Note:** Don't forget to restart Sublime Text after installing this package. 
+You can change the color, opacity level and size of the icons by modifying your
+user preferences file, which you can find by:
 
-### Customization
+* `Preferences → Package Settings → A File Icon → Settings`
+* Choose `Preferences: A File Icon Settings` in the `Command Palette`
 
-You can change the color, opacity level and size of the icons by modifying your user preferences file, which you can find by:
+The most important options:
 
-* `Preferences → Package Settings → A File Icon → Settings`,
-* Choose `A File Icon: Settings` in `Command Palette`.
+| Option | Description |
+| ------ | ----------- |
+| `color` | Tint all icons (including folders) with a single color, e.g. `"#8899AA"` |
+| `opacity` | The opacity level of the default icon state |
+| `size` | The icon size (defaults to `8`) |
+| `aliases` | Set `false` to apply icons to installed syntaxes only |
+| `force_mode` | Use these icons even if your theme provides its own |
 
-### Wrong Icons
+## Folder icons
 
-Sublime Text uses syntax scopes for file-specific icons. That's why icons of packages provided by the community require them to be installed.
+The folder icons are applied by generating `.sublime-theme` patches for all
+installed themes. Just like in VS Code, the Symbols icon set uses the **same
+artwork for collapsed and expanded folders** — the state is indicated by the
+disclosure arrows next to the folder.
 
-See the list of [community packages][packages] that you may need to install to see the right icon.
+## Wrong icons
 
-### Themes
+Sublime Text uses syntax scopes for file-specific icons. That's why icons of
+syntax definitions provided by the community require them to be installed.
 
-If your theme supports an icon customization you can choose what icons you want to use – provided by the theme (by default) or provided by the package. Otherwise this package adds its own icons only.
+See the list of [community packages][packages] you may need to install to see
+the right icon.
 
-### Troubleshooting
+## Troubleshooting
 
 If something goes wrong try to:
 
-1. Open `Command Palette` using menu item `Tools → Command Palette...`.
-2. Choose `A File Icon: Revert to a Freshly Installed State`.
-3. Restart Sublime Text.
+1. Open `Command Palette` using menu item `Tools → Command Palette...`
+2. Choose `A File Icon: Revert to a Freshly Installed State`
+3. Restart Sublime Text
 
-## Developers
+## Icon mapping
 
-### Bring Support of the File Icon Customization to Your Theme
+This package was created by re-mapping the original A File Icon set to the
+Symbols icon set:
 
-If you are a theme developer and you want to support a file icon customization, you should:
+* 147 icons were replaced by their Symbols equivalent
+* 115 icons without an equivalent were removed
+* 15 icons were added (`deno`, `prettier`, `vitest`, `tsconfig`, `tauri`,
+  `firebase`, `gitlab`, `cypress`, `rescript`, `gdscript`, `gdproject`, `luau`,
+  `cucumber`, `exe`, `readme`)
 
-* Remove all stuff related to the icon setup: `.tmPreferences`, `.sublime-settings`, `.sublime-syntax` and `.tmLanguage` files.
-* Rename all your existing icons to match [these ones][icons].
-* Add `.supports-a-file-icon-customization` file to the root of your theme (this is how we check if the theme **supports** customization of the file-specific icons).
+Notable substitutions, following the associations of the Symbols theme:
+`css` → brackets, `json` → brackets, `html` → code, `scss` → sass,
+`sql` → database, `xlsx` → spreadsheet, `.ps1`/`.bat` → shell,
+`.sln` → visual studio, `.erb` → ruby, `wgsl` → webgpu and
+`diff`/`patch` → patch.
 
-### How It Works
+## How it works
 
-In simple terms, `A File Icon` does the following:
+In simple terms, the package does the following:
 
-1. Copies all the necessary files right after install or upgrade to `zzz A File Icon zzz` directory
+1. Copies all the necessary files right after install or upgrade to a hidden
+   `zzz A File Icon` overlay package, which is loaded as late as possible
 2. Searches all installed themes
-3. Checks if themes are already patched, if not
-4. Patches them by generating `<theme-name>.sublime-theme` files from a [template][template]
-5. For themes those support file icon customization, it provides `.tmPreferences` files and missing icons by default (user can override icons provided by the theme via `"force_mode": true`).
+3. Patches them by generating `<theme-name>.sublime-theme` files, which
+   override the file type and folder icon definitions
+4. Creates hidden syntax aliases for files without an installed syntax
 
 The real process is just a little bit more complex to minimize hard drive I/O.
 
-## Resources
+## Building from source
 
-### Colors
+The SVG sources are converted to `@1x`, `@2x` and `@3x` PNG assets by a python
+build script. It requires [cairo](https://www.cairographics.org/)
+(e.g. `brew install cairo` on macOS):
 
-Colors are bright because they should look good with most themes. However you can change color and opacity level of all icons. See [customization][customization].
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements-dev.txt
+.venv/bin/python build           # icons + preferences
+.venv/bin/python build --icons   # icons only
+```
 
-![Palette][img-palette]
+## Acknowledgments
 
-### Icons
+* [A File Icon][a-file-icon] by Ihor Oleksandrov and DeathAxe — the package
+  this project is based on (MIT License)
+* [Symbols for VS Code][symbols] by Miguel Solorio — the icon set (MIT License)
 
-This package contains file and folder icons provided by:
+## License
 
-- [Symbols for VS Code](https://github.com/miguelsolorio/vscode-symbols) (MIT License)
+[MIT](LICENSE.md)
 
-Source icons are provided in SVG format (Sublime Text doesn't currently support it). They are convert to @1x, @2x and @3x PNG assets before each release via python build script `py build -i`.
-
-Rasterized icons can be found in `icons` folder.
-
-<!-- Misc -->
+<!-- Links -->
 
 [a-file-icon]: https://github.com/SublimeText/AFileIcon
 [symbols]: https://github.com/miguelsolorio/vscode-symbols
-[customization]: https://github.com/deathaxe/sublime-a-file-icon#customization
-[downloads]: https://packagecontrol.io/packages/A%20File%20Icon 'A File Icon @ Package Control'
-[forum]: https://forum.sublimetext.com/t/a-file-icon-sublime-file-specific-icons-for-improved-visual-grepping/25874
-[icons]: https://github.com/deathaxe/sublime-a-file-icon/tree/develop/icons/multi
-[known-issues]: https://github.com/deathaxe/sublime-a-file-icon/labels/known%20issue
-[new-issue]: https://github.com/deathaxe/sublime-a-file-icon/issues/new
-[packages]: https://github.com/deathaxe/sublime-a-file-icon/blob/develop/PACKAGES.md
-[release]: https://github.com/deathaxe/sublime-a-file-icon/releases
-[stars]: https://github.com/deathaxe/sublime-a-file-icon/stargazers
-[template]: https://github.com/deathaxe/sublime-a-file-icon/blob/develop/common/templates/theme.py
-[issues]: https://github.com/deathaxe/sublime-a-file-icon/issues
+[packages]: PACKAGES.md
+[download]: https://github.com/ziishaned/sublime-text-symbols/archive/refs/heads/main.zip
 
 <!-- Assets -->
 
-[img-forum]: media/reply-on-forum.svg
-[img-getting-started]: media/getting-started.jpg
-[img-logo]: media/logo.png
-[img-palette]: media/palette.png
-[img-stars]: media/star-on-github.svg
+[img-preview]: media/preview.png

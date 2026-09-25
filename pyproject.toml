@@ -1,0 +1,13 @@
+# Configuration for Black.
+
+[tool.black]
+exclude = '''
+/(
+  | \.git
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | tests
+  | vendor
+)/
+'''

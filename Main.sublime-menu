@@ -1,0 +1,32 @@
+[
+	{
+		"id": "preferences",
+		"children":
+		[
+			{
+				"id": "package-settings",
+				"caption": "Package Settings",
+				"children":
+				[
+					{
+						"caption": "A File Icon",
+						"children": [
+							{
+								"caption": "Settings",
+								"command": "edit_settings",
+								"args": {
+									"base_file": "${packages}/A File Icon/A File Icon.sublime-settings",
+									"default": "// A File Icon Preferences – User\n// ================================================================\n{\n\t$0\n}\n"
+								}
+							},
+							{
+								"caption": "Revert to a Freshly Installed State",
+								"command": "afi_revert"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

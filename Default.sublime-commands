@@ -1,0 +1,10 @@
+[
+	{
+		"caption": "Preferences: A File Icon Settings",
+		"command": "edit_settings", "args":
+		{
+			"base_file": "${packages}/A File Icon/A File Icon.sublime-settings",
+			"default": "// A File Icon Preferences – User\n// ================================================================\n{\n\t$0\n}\n"
+		}
+	}
+]

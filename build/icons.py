@@ -5,7 +5,6 @@ import png
 import re
 import subprocess
 
-
 PACKAGE_ROOT = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -64,6 +63,32 @@ def create_icons(icons):
         subprocess.call(["subl", "--command", "symbols_revert"])
     except:
         pass
+
+
+def create_file_icon_theme(icons):
+    """Create a .sublime-file-icons theme for ST's native file icon themes
+    feature (build 4206+). It maps file extensions and names to the colored
+    icons of the package's `icons/multi` folder. It is opt-in via the global
+    `file_icon_theme` setting.
+    """
+    mappings = {}
+    for icon_name, icon_data in icons.items():
+        for key in ("aliases", "syntaxes"):
+            for syntax in icon_data.get(key, []):
+                for extension in syntax.get("extensions", []):
+                    # png assets live in <package>/icons/multi/<name>.png
+                    mappings.setdefault(extension, "multi/" + icon_name)
+
+    with open(os.path.join(PACKAGE_ROOT, "symbols.sublime-file-icons"), "w") as out:
+        out.write(
+            json.dumps(
+                {"icons": mappings},
+                indent="\t",
+                sort_keys=True,
+                separators=(",", ": "),
+            )
+            + "\n"
+        )
 
 
 def create_folder_icons():

@@ -1,7 +1,7 @@
 import argparse
 import json
 
-from icons import create_icons, icons_path
+from icons import create_file_icon_theme, create_icons, icons_path
 from preferences import create_preferences
 
 
@@ -31,6 +31,7 @@ def main(argv=None):
     if options.icons:
         print("building icons...")
         create_icons(icons)
+        create_file_icon_theme(icons)
 
 
 if __name__ == "__main__":
